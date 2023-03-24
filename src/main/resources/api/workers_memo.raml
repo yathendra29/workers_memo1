@@ -1,0 +1,21 @@
+#%RAML 1.0
+title: workers_memo
+mediaType: 
+- application/json
+
+/createWorkers:
+  post:
+    body:
+      type: !include WorkersDetails_Datatypes/createWorkers.raml
+      example: !include Examples/createWorkers.raml
+    responses:
+      201:
+        body:
+          example: "Workers details created succesfully"
+/fetchWorkers:
+  get:
+    responses:
+      200:
+        body:
+          example: !include Examples/createWorkers.raml
+      
